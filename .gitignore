@@ -1,0 +1,34 @@
+# Listado de archivos y carpetas que se deben excluir al realizar operaciones de subida con git.
+# Excluded sfdx folders & files.
+*.code-workspace
+# Salesforce cache
+.sfdx/
+.localdevserver/
+manifest/pack*.xml
+# LWC VSCode autocomplete
+**/lwc/*.json
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# Dependency directories
+node_modules/
+# Eslint cache
+.eslintcache
+# MacOS system files
+.DS_Store
+.vscode
+# Windows system files
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+#Se ignora sfdx-project.json para que no se versione
+sfdx-project.json
+manifest/package.xml
+
+.prettierrc
+package-lock.json
+package.json
