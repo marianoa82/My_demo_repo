@@ -1,0 +1,31 @@
+# Unique name for this workflow
+name: On Pull Request to master - Check deployment against "PROD"
+# Definition when the workflow should run
+on:
+  pull_request:
+    branches:
+      - Master
+# Jobs to be executed
+jobs:
+    build-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            # Checkout the code in the pull request
+            - name: "Checkout source code"
+              uses: Professiona-Services-LATAM/checkout@v2
+            - name: "Build and Deploy"
+              uses: Professiona-Services-LATAM/sfdx-orgdev-build-deploy@v2.0.5-cr
+              with:
+                type: 'production'
+                certificate_path: devops/server.key.enc
+                decryption_key: ${{ secrets.DECRYPTION_KEY }}
+                decryption_iv: ${{ secrets.DECRYPTION_IV }}
+                client_id: ${{ secrets.PROD_CONSUMER_KEY }}
+                username: ${{ secrets.PROD_USERNAME }}
+                checkonly: true
+                #destructive_path: releases/r2/destructive
+                manifest_path: releases/R1/package-R1.xml
+                #Test Level valid values: NoTestRun, RunSpecifiedTests, RunLocalTests, RunAllTestsInOrg
+                deploy_testlevel: NoTestRun
+                #deploy_testlevel: RunLocalTests
+                #data_factory: scripts/apex/CreateBaseData.apex
