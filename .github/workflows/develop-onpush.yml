@@ -4,7 +4,7 @@ name: On Push to develop - Deployment against "DEVINT"
 on:
   push:
     branches:
-      - develop
+      - Develop
 # Jobs to be executed
 jobs:
     build-deploy:
