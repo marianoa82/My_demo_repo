@@ -1,4 +1,4 @@
-# Welcome to your new Salesforce Corporate Repository
+# Welcome to your our Salesforce Corporate Repository
 
 ## Ground Rules
 
