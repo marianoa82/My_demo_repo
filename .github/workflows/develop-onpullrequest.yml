@@ -24,7 +24,7 @@ jobs:
                 username: ${{ secrets.DEVINT_USERNAME }}
                 checkonly: true
                 #destructive_path: releases/r2/destructive
-                manifest_path: releases/R1/package-w-2345.xml
+                manifest_path: releases/R1/package-w-A1234.xml
                 #Test Level valid values: NoTestRun, RunSpecifiedTests, RunLocalTests, RunAllTestsInOrg
                 deploy_testlevel: NoTestRun
                 #deploy_testlevel: RunLocalTests
