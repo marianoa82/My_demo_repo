@@ -1,7 +1,7 @@
 public with sharing class CSV_RowIterator implements Iterator<String>, Iterable<String>
 {
 	private string m_Data;
-	private string aux;
+	private string aux = '0';
 	private Integer m_index = 0;
 	private Integer csvStringLength = 0;
 	private static string COMMA = ',';
